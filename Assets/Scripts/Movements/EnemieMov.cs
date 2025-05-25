@@ -26,13 +26,15 @@ public class EnemieMov : MonoBehaviour
         transform.position += new Vector3(movement, 0f, 0f);
         distanciaMovida += Mathf.Abs(movement);
 
-       
+
         if (distanciaMovida >= moveDistance)
         {
             movDer = !movDer;
             distanciaMovida = 0f;
 
-           
-            transform.position += new Vector3(0f, -descendAmount, 0f); }
+
+            transform.position += new Vector3(0f, -descendAmount, 0f);
+        }
 
     }
+}
