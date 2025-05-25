@@ -5,6 +5,7 @@ using UnityEngine;
 public class MovementOtter : MonoBehaviour
 {
     [SerializeField]private float speed;
+    public float moveSpeed = 2f;
     // Start is called before the first frame update
     void Start()
     {

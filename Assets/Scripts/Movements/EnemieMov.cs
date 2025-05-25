@@ -19,6 +19,7 @@ public class EnemieMov : MonoBehaviour
 
     void Update()
     {
+        // Mover en horizontal
         float direction = movDer ? 1f : -1f;
         float movement = direction * moveSpeed * Time.deltaTime;
 
@@ -36,5 +37,12 @@ public class EnemieMov : MonoBehaviour
             transform.position += new Vector3(0f, -descendAmount, 0f);
         }
 
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "WallCollider")
+        {
+            moveSpeed *= -1f;
+        }
     }
 }
