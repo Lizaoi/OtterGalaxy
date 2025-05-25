@@ -5,8 +5,6 @@ using UnityEngine;
 public class MovementOtter : MonoBehaviour
 {
     [SerializeField]private float speed;
-    public GameObject bulletPrefab; // Arrastrás tu prefab desde Unity
-    public Transform PuntoLanzar;     // Un objeto vacío como punto de disparo
     // Start is called before the first frame update
     void Start()
     {
@@ -17,11 +15,6 @@ public class MovementOtter : MonoBehaviour
     void Update()
     {
 
-        if (Input.GetKeyDown(KeyCode.Mouse1))
-        {
-            Lanzar();
-        }
-
         if (Input.GetKey(KeyCode.D)) //Vector3(X, Y)
         {
             transform.Translate(new Vector2(1, 0)*speed*Time.deltaTime); //Vector2 (X, y)
@@ -30,9 +23,5 @@ public class MovementOtter : MonoBehaviour
             transform.Translate(new Vector2(-1, 0) * speed * Time.deltaTime);
         }
         
-    }
-    void Lanzar()
-    {
-        Instantiate(bulletPrefab, PuntoLanzar.position, Quaternion.identity);
     }
 }
